@@ -1,0 +1,27 @@
+server:
+  http2:
+    enabled: true
+  port: 8088
+spring:
+  thymeleaf:
+    cache: true
+    prefix: classpath:/static/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1qaz!QAZ
+    url: jdbc:mysql://192.168.10.22:3306/goudan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  web:
+    resources:
+      cache:
+        period: 259200
+        cachecontrol:
+          no-store: false
+          no-cache: false
+          max-age: 10000
+mybatis-plus:
+  type-aliases-package: net.bestjade.entity
+  mapper-locations: classpath*:/net/bestjade/ty/mapper/**/*.xml
+logging:
+  level:
+    net.bestjade.ty.mapper: trace
